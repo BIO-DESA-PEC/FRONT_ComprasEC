@@ -1,0 +1,32 @@
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow: 0 10px 25px -15px rgba(0,0,0,.15);
+  padding:18px;
+}
+
+.header{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+  margin-bottom: 10px;
+}
+.title{ font-weight:800; font-size:24px; }
+.sub{ color: var(--muted); }
+
+.metrics{
+  display:grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap:12px; margin-top:12px;
+}
+.metric{
+  background:#fff; border:1px solid var(--border); border-radius:14px; padding:12px;
+}
+.metric .k{ font-size:26px; font-weight:800; }
+
+.table{ width:100%; border-collapse:collapse; margin-top:12px; }
+.table th, .table td{
+  text-align:left; font-size:14px; padding:10px 12px; border-bottom:1px solid var(--border);
+}
+
+.badge{ padding:3px 10px; border-radius:999px; font-size:12px; border:1px solid var(--border); }
+.ok{ background:#ecfeff; color:#0e7490; }
+.warn{ background:#fff7ed; color:#b45309; }
+.wait{ background:#eef2ff; color:#4338ca; }

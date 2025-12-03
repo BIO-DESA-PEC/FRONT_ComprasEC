@@ -1,0 +1,178 @@
+/* ====== Neutro profesional y 100% uniforme ====== */
+
+/* En CSS Modules no uses :root; define la var en un selector local */
+.modalBox{ --ctl-h:40px; }
+
+.modalOverlay{
+  position:fixed; inset:0;
+  background:rgba(15,23,42,.45);
+  display:flex; align-items:center; justify-content:center;
+  padding:24px; z-index:60;
+}
+
+.modalBox{
+  width:min(1100px,96vw);
+  max-height:92vh;
+  background:#fff; border:1px solid #e5e7eb; border-radius:16px;
+  box-shadow:0 18px 48px rgba(2,6,23,.16);
+  display:flex; flex-direction:column; overflow:hidden;
+}
+
+/* Header */
+.modalHeader{ position:sticky; top:0; background:#fff; z-index:5; border-bottom:1px solid #e5e7eb; padding:14px 16px; }
+.titleRow{ display:flex; align-items:center; justify-content:space-between; }
+.modalTitle{ margin:0; font-weight:800; color:#0f172a; font-size:1.05rem; }
+.closeX{ width:34px; height:34px; border-radius:10px; border:1px solid #e5e7eb; background:#fff; color:#64748b; cursor:pointer; }
+.closeX:hover{ background:#f8fafc; }
+
+.inlineBar{ margin-top:8px; display:flex; gap:12px; align-items:flex-end; flex-wrap:wrap; }
+.inlineField{ display:grid; min-width:200px; }
+.inlineField>span{ font-size:.78rem; color:#64748b; margin-bottom:6px; }
+.select{ height:var(--ctl-h); border:1px solid #e5e7eb; border-radius:10px; padding:8px 10px; background:#fff; }
+.helperNote{ font-size:.86rem; color:#64748b; }
+
+/* Contenido */
+.modalContent{ padding:16px; overflow:auto; background:#ffffff; }
+
+/* ===== FORM 2×N ===== */
+.form2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;   /* siempre dos por renglón */
+  gap:12px;
+  margin-bottom:14px;
+}
+.field{ display:flex; flex-direction:column; }
+.field > span{ font-size:.78rem; color:#64748b; margin-bottom:6px; }
+.field input,
+.field select{
+  height:var(--ctl-h);
+  border:1px solid #e5e7eb; border-radius:10px;
+  padding:8px 12px; background:#fff; outline:none;
+}
+.field textarea{
+  min-height:calc(var(--ctl-h) * 2 + 12px);
+  border:1px solid #e5e7eb; border-radius:10px;
+  padding:10px 12px; background:#fff; outline:none; resize:vertical;
+}
+.field input:focus, .field select:focus, .field textarea:focus{
+  border-color:#2563eb; box-shadow:0 0 0 3px #dbeafe;
+}
+.fieldFull{ grid-column: 1 / -1; } /* ocupa todo el renglón */
+
+/* Normalización de date inputs (para mantener altura uniforme) */
+.field input[type="date"]{
+  line-height:calc(var(--ctl-h) - 2px);
+}
+.field input[type="date"]::-webkit-datetime-edit,
+.field input[type="date"]::-webkit-date-and-time-value{
+  height:calc(var(--ctl-h) - 2px);
+}
+.field input[type="date"]::-webkit-calendar-picker-indicator{
+  margin-right:4px;
+}
+
+/* ===== TABLA ===== */
+.tableCard{
+  border:1px solid #e5e7eb; border-radius:12px; background:#fff; overflow:hidden;
+}
+
+/* columnas fijas para encabezado y filas (idénticas) */
+.thead, .trow{
+  display:grid; align-items:center; gap:8px;
+  grid-template-columns:
+    48px 120px minmax(320px,2fr) 90px 110px 90px 110px
+    120px 120px 140px 160px 240px 110px 48px;
+}
+
+.thead{
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background:#f3f4f6;     /* asegurar fondo sólido */
+  border-bottom:1px solid #e5e7eb;
+  padding:10px 12px;
+}
+.trow{
+  padding:8px 12px; border-bottom:1px solid #eef2f4; background:#fff;
+}
+.tscroll{
+  max-height:380px;
+  overflow:auto;
+  background:#fff; /* mantiene blanco */
+}
+
+/* Elimina el zebra o déjalo blanco */
+.tscroll .trow:nth-child(2n){
+  background:#fff; /* ya no gris */
+}
+
+/* celdas */
+.trow > div, .thead > div{ display:flex; align-items:center; height:var(--ctl-h); }
+.trow input, .trow select{
+  width:100%; height:var(--ctl-h);
+  border:1px solid #e5e7eb; border-radius:10px; padding:8px 10px; background:#fff; outline:none;
+}
+.trow input:focus, .trow select:focus{
+  border-color:#2563eb; box-shadow:0 0 0 3px #dbeafe;
+}
+
+.idx{ justify-content:center; color:#6b7280; font-family:ui-monospace,Consolas,monospace; }
+.sticky{
+  position: sticky;
+  left: 0;
+  background: inherit;     /* se ve bien en thead y filas */
+  border-right:1px solid #eef2f4;
+  z-index: 6;              /* por encima del resto de celdas */
+}
+.numInp{ text-align:right; }
+.right{ text-align:right; justify-content:flex-end; }
+.num{ width:100%; text-align:right; font-variant-numeric:tabular-nums; font-weight:700; }
+
+.iconBtn{
+  width:34px; height:34px; border-radius:10px; border:1px solid #e5e7eb; background:#fff; color:#6b7280; cursor:pointer;
+}
+.iconBtn:hover{ background:#f3f4f6; }
+
+.addRow{ background:#ffffff; }
+.addRowBtnWrap{ grid-column: 1 / -1; display:flex; }
+.secondary{ border-radius:999px; padding:10px 16px; border:1px solid #e5e7eb; background:#fff; cursor:pointer; }
+.secondary:hover{ background:#f8fafc; }
+
+/* Mensajes */
+.alertOk,.alertErr{ margin-top:12px; padding:10px 12px; border-radius:10px; font-size:.92rem }
+.alertOk{ background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0 }
+.alertErr{ background:#fef2f2; color:#991b1b; border:1px solid #fecaca }
+
+/* Footer */
+.modalFooter{
+  position:sticky; bottom:0; background:#fff; border-top:1px solid #e5e7eb;
+  padding:12px 16px; display:flex; justify-content:space-between; align-items:center; gap:12px;
+}
+.resumen{ display:flex; gap:16px; align-items:center; }
+.resumen span{ font-size:.78rem; color:#64748b; }
+.resumen .num{ font-size:1.05rem; }
+
+.actions{ display:flex; gap:10px; flex-wrap:wrap; }
+.primary,.primaryOutline{
+  border-radius:999px; padding:10px 16px; font-weight:800; cursor:pointer; border:1px solid transparent;
+}
+.primary{ background:#2563eb; color:#fff; border-color:#2563eb; }
+.primary:hover{ filter:brightness(.96); }
+.primaryOutline{ background:#fff; color:#2563eb; border-color:#dbeafe; }
+.primaryOutline:hover{ background:#f4f7ff; }
+
+/* Scrollbars */
+.tscroll::-webkit-scrollbar,.modalContent::-webkit-scrollbar{ height:10px; width:10px }
+.tscroll::-webkit-scrollbar-thumb,.modalContent::-webkit-scrollbar-thumb{ background:#dbe3ea; border-radius:10px; border:2px solid transparent; background-clip:content-box }
+
+/* Responsive: en móviles se apila todo a 1 columna */
+@media (max-width:860px){
+  .form2{ grid-template-columns: 1fr; }
+  .fieldFull{ grid-column: 1 / -1; }
+  .thead, .trow{
+    grid-template-columns:
+      40px 110px minmax(220px,2fr) 80px 100px 80px 100px
+      110px 110px 120px 140px 200px 100px 40px;
+    min-width:980px;
+  }
+}

@@ -1,0 +1,69 @@
+.wrap{ padding:20px; }
+.card{ background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:16px; }
+.actions{ display:flex; gap:8px; margin-bottom:12px; }
+.ok{ background:#0ea5e9; color:#fff; padding:8px 12px; border-radius:10px; border:0; }
+.warn{ background:#ef4444; color:#fff; padding:8px 12px; border-radius:10px; border:0; }
+.table{ border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; }
+.row{ display:grid; grid-template-columns: 36px 100px 1fr 1fr 180px 110px 140px; gap:8px; padding:10px 12px; border-bottom:1px solid #f1f5f9; align-items:center; }
+.header{ background:#f8fafc; font-weight:600; }
+.num{ text-align:right; }
+.empty{ padding:18px; color:#64748b; }
+.tableWrap { overflow: auto; }
+.table { width: 100%; border-collapse: collapse; background: #fff; }
+.table th, .table td { padding: 12px 14px; border-bottom: 1px solid #eef0f3; text-align: left; }
+.empty { text-align: center; color: #6b7280; padding: 24px; }
+
+.card { background: #fff; border-radius: 14px; padding: 16px; }
+.actions { display: flex; gap: 8px; }
+
+.btnPrimary {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: #19a974; /* verde */
+  color: #fff;
+  cursor: pointer;
+}
+.btnPrimary:disabled { opacity: .6; cursor: default; }
+
+.btnDanger {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: #ef4444; /* rojo */
+  color: #fff;
+  cursor: pointer;
+}
+.btnDanger:disabled { opacity: .6; cursor: default; }
+
+/* app/aprobaciones/aprobaciones.module.css */
+
+.title { margin: 0 0 6px; }
+
+.subnav { display: flex; gap: 12px; margin: 8px 0 18px; }
+.subnavLink {
+  padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 10px;
+  background: #fff; text-decoration: none; color: #111827;
+}
+.subnavLink:hover { background: #f9fafb; }
+
+.card { background: #fff; border-radius: 14px; padding: 16px; }
+.toolbar { display: flex; gap: 10px; margin-bottom: 12px; }
+
+.tableWrap { overflow: auto; }
+.table { width: 100%; border-collapse: collapse; background: #fff; }
+.table th, .table td { padding: 12px 14px; border-bottom: 1px solid #eef0f3; text-align: left; }
+.empty { text-align: center; color: #6b7280; padding: 24px; }
+.actions { display: flex; gap: 8px; }
+
+.btnPrimary { padding: 8px 12px; border-radius: 10px; border: 1px solid transparent; background: #19a974; color: #fff; cursor: pointer; }
+.btnPrimary:disabled { opacity: .6; cursor: default; }
+.btnDanger  { padding: 8px 12px; border-radius: 10px; border: 1px solid transparent; background: #ef4444; color: #fff; cursor: pointer; }
+.btnDanger:disabled { opacity: .6; cursor: default; }
+
+.pagination {
+  display: flex; gap: 12px; align-items: center;
+  justify-content: flex-end; margin-top: 12px;
+}
+.pagination button { padding: 6px 10px; border-radius: 8px; border: 1px solid #e5e7eb; background: #fff; }
+.pagination span { color: #374151; }

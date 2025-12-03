@@ -1,0 +1,508 @@
+/* ===== Layout general (igual que OC) ===== */
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+}
+
+/* Header de arriba (título + solicitud + fecha + estado + volver) */
+.headerCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.2px;
+}
+
+/* Línea de meta: solicitud, fecha */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metaKey {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Lado derecho del header: estado + volver (como OC) */
+.headerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+/* Badges de estado */
+.badge {
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.badgeDraft {
+  background: #eaf5f1;
+  color: #1f6d5d;
+  border-color: #cfe9e2;
+}
+
+.badgeApproved {
+  background: #e7efff;
+  color: #1d4ed8;
+  border-color: #cfe0ff;
+}
+
+.badgeSeparated {
+  background: #fef9c3;
+  color: #854d0e;
+  border-color: #facc15;
+}
+
+/* link "← Volver" */
+.backLink {
+  background: transparent;
+  border: 0;
+  color: #2e7d6b;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  background: #f0f7f4;
+}
+
+/* Responsive header */
+@media (max-width: 640px) {
+  .headerCard {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .headerRight {
+    align-items: flex-start;
+  }
+}
+
+/* ===== Tema general (mismo que OC) ===== */
+.ocTheme {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --border: #e6eaf0;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --brand: #2e7d6b;
+  --brand-2: #2563eb;
+  --success-bg: #e8f7ef;
+  --success-border: #c7eadc;
+  --warn-bg: #fee2e2;
+  --warn-border: #fecaca;
+  --warn-text: #b91c1c;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.05),
+    0 4px 10px rgba(16, 24, 40, 0.05);
+  --radius: 12px;
+  --radius-lg: 14px;
+  --gap: 12px;
+  --h: 40px;
+}
+
+.preordenRoot {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== Card resumen TOTAL (igual idea que "TOTAL ORDEN") ===== */
+.summaryCard {
+  background: #f3f6ff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 14px 16px 12px;
+}
+
+.summaryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.summaryLabel {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+
+.summaryAmount {
+  margin-top: 2px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.summaryStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summaryControls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.summarySpacer {
+  flex: 1;
+}
+
+/* ===== Card de detalle (tabla) ===== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* ===== Acciones superiores de la tabla ===== */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.leftTools {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Botones */
+.primary,
+.secondary {
+  height: var(--h);
+  padding: 0 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    filter 0.15s ease;
+}
+
+.primary {
+  background: var(--brand);
+  color: #fff;
+}
+
+.primary:hover {
+  filter: brightness(0.97);
+}
+
+.secondary {
+  background: #f8fafc;
+  color: #111827;
+  border-color: var(--border);
+}
+
+.secondary:hover {
+  background: #f3f5f9;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ===== Modo (días / forma global) en la card de total ===== */
+.modeBar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.modeItem {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* Inputs y selects */
+.input,
+.ctl {
+  width: 100%;
+  height: var(--h);
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 13px;
+  color: var(--text);
+  background: #fff;
+}
+
+.inputNum {
+  text-align: right;
+}
+
+.num {
+  text-align: right;
+}
+
+.selectWrap {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  height: var(--h);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 0 10px;
+  background: #fff;
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* ===== Tabla ===== */
+.tableWrapper {
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: auto;
+  background: #fff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 13px;
+}
+
+/* encabezado fijo */
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: linear-gradient(#f8fafc, #f5f7fb);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 10px;
+  font-weight: 600;
+  color: #334155;
+  text-align: left;
+}
+
+/* cuerpo */
+.table tbody tr {
+  border-bottom: 1px solid #eef2f7;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table td {
+  padding: 8px 10px;
+  vertical-align: middle;
+  color: #0f172a;
+}
+
+/* columnas */
+.colArticulo {
+  width: 18%;
+}
+.colProveedor {
+  width: 20%;
+}
+.colFecha {
+  width: 13%;
+}
+.colCant {
+  width: 7%;
+}
+.colPrecio {
+  width: 9%;
+}
+.colDesc {
+  width: 8%;
+}
+.colIvaPct {
+  width: 7%;
+}
+.colDias {
+  width: 8%;
+}
+.colForma {
+  width: 12%;
+}
+.colIva {
+  width: 6%;
+}
+.colTotal {
+  width: 9%;
+}
+.colActions {
+  width: 5%;
+  text-align: right;
+}
+
+/* proveedor combo igual OC */
+.proveedorWrapper {
+  width: 100%;
+}
+
+.proveedorWrapper :global(button[data-combo-toggle]) {
+  width: 100%;
+  height: var(--h);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0 10px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: var(--text);
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.proveedorWrapper
+  :global(button[data-combo-toggle] > *:first-child) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+/* botón por fila */
+.linkBtn {
+  height: var(--h);
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: #475569;
+  cursor: pointer;
+}
+
+.linkBtn:hover {
+  background: #f8fafc;
+}
+
+.linkBtn[title="Eliminar"] {
+  color: #ef4444;
+  border-color: #f3d0d0;
+}
+
+.linkBtn[title="Eliminar"]:hover {
+  background: #fff6f6;
+}
+
+/* ===== Totales abajo ===== */
+.totals {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.totalBox {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  min-width: 180px;
+  text-align: right;
+  box-shadow: var(--shadow);
+}
+
+.totalBoxEm {
+  background: var(--success-bg);
+  border-color: var(--success-border);
+}
+
+.totalLabel {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.totalValue {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+/* Card superior blanco para el encabezado (igual estilo OC) */
+.topHeader {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e6eaf0;
+  padding: 16px 24px;
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.05),
+    0 4px 10px rgba(16, 24, 40, 0.05);
+  margin-bottom: 16px;
+}
+
+/* (ya la tienes, la dejo por si quieres afinar) */
+.headerCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* opcional: puntito entre Solicitud y Fecha como en OC */
+.metaDot {
+  margin: 0 4px;
+}

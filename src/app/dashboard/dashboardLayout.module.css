@@ -1,0 +1,31 @@
+.shell{
+  display:grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100dvh;          /* ocupa toda la altura de la pantalla */
+}
+
+.main{
+  padding: 24px 32px;          /* margen interior agradable */
+}
+
+.theme{
+  /* Paleta clara + acentos BioCells */
+  --bg:#f7faf9;
+  --panel:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#e6e9ee;
+
+  /* Verde BioCells (emerald) y sus tintes */
+  --accent:#0cab78;       /* 600 */
+  --accent-50:#ecfdf5;    /* muy sutil */
+  --accent-100:#d1fae5;
+  --accent-200:#a7f3d0;
+  --accent-700:#047857;
+
+  --link:#047857;
+
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+}
