@@ -30,7 +30,7 @@ export default function FacturaPreviewModal({ open, data, onClose, onUse }) {
 
   useEffect(() => {
     if (!open) return;
-    const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+    const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://back-compras-ec.onrender.com';
     (async () => {
       const [a,b,c] = await Promise.all([
         fetch(`${base}/api/dimensiones/linea`).then(r=>r.json()),
@@ -48,7 +48,7 @@ export default function FacturaPreviewModal({ open, data, onClose, onUse }) {
 
   useEffect(() => {
     if (!open || gastosLoaded) return;
-    const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+    const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://back-compras-ec.onrender.com';
     (async () => {
       try {
         const res = await fetch(`${base}/api/gastos`);
@@ -192,7 +192,7 @@ export default function FacturaPreviewModal({ open, data, onClose, onUse }) {
   async function enviarCorreoArticulo(){
     try{
       setSending(true); setMsg(null);
-      const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+      const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://back-compras-ec.onrender.com';
       const res = await fetch(`${base}/api/oc/${data?.OcId||0}/prefactura/notificar-articulo`,{
         method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(infoCorreo)
       });
@@ -225,7 +225,7 @@ export default function FacturaPreviewModal({ open, data, onClose, onUse }) {
     const err = validateServicio(); if(err){ setMsg({type:'err',text:err}); return;}
     try{
       setSending(true); setMsg(null);
-      const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+      const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://back-compras-ec.onrender.com';
       const payload = {
         Cabecera:{
           CardCode:cabecera.CardCode, DocDate:cabecera.DocDate, DocDueDate:cabecera.DocDueDate,
@@ -264,7 +264,7 @@ export default function FacturaPreviewModal({ open, data, onClose, onUse }) {
   async function guardarBorrador(){
     try{
       setSending(true); setMsg(null);
-      const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+      const base = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://back-compras-ec.onrender.com';
       const docEntry = data?.DocEntry;
       if(!docEntry) throw new Error('No hay DocEntry del borrador.');
       const payload = {

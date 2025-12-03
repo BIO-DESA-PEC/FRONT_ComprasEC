@@ -7,7 +7,7 @@ import styles from "./preordenes.module.css";
 const PAGE_SIZE_DEFAULT = 15;
 
 async function fetchList({ userId, page, pageSize, q }) {
-  const base = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
+  const base = process.env.NEXT_PUBLIC_BACKEND_URL || "https://back-compras-ec.onrender.com";
   const qp = new URLSearchParams();
   qp.set("page", String(page || 1));
   qp.set("pageSize", String(pageSize || PAGE_SIZE_DEFAULT));

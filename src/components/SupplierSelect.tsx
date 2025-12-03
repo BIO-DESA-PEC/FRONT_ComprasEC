@@ -39,7 +39,7 @@ interface ProveedorPickerProps {
   disabled?: boolean;
 }
 
-const API_URL = 'http://localhost:5000/api/proveedores';
+const API_URL = 'https://back-compras-ec.onrender.com/api/proveedores';
 
 /* ========= Type guards ========= */
 

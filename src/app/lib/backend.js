@@ -2,7 +2,7 @@
 
 // Base pública (llega al cliente). Ej.: http://127.0.0.1:8000
 export const API_BASE =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
+  process.env.NEXT_PUBLIC_BACKEND_URL || "https://back-compras-ec.onrender.com";
 
 // Helper para armar URLs de forma segura
 function apiUrl(path, params) {

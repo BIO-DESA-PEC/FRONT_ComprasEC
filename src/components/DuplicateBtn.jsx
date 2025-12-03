@@ -5,7 +5,7 @@ export default function DuplicateBtn({ preocId, userId, enabled, resetCant=false
   const router = useRouter();
 
   async function dup() {
-    const base = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
+    const base = process.env.NEXT_PUBLIC_BACKEND_URL || "https://back-compras-ec.onrender.com";
     const r = await fetch(`${base}/api/preoc/${preocId}/duplicar`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
