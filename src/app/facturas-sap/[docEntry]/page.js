@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { getFacturaSapByDraft } from '@/app/lib/backend';
-import FacturaPreviewModal from '@/app/components/FacturaPreviewModal'; // ajusta ruta
+import FacturaPreviewModal from '@/components/FacturaPreviewModal';
 
 export default function FacturaSAPDetalle() {
   const { docEntry } = useParams();
