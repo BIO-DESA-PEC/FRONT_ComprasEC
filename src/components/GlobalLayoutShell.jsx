@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import { usePathname } from "next/navigation";
-import styles from "./GlobalLayoutShell.module.css";
+import styles from "./globalLayoutShell.module.css";
 
 export default function GlobalLayoutShell({ children, session, user }) {
     const pathname = usePathname();
