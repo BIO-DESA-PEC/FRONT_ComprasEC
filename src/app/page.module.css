@@ -1,0 +1,140 @@
+/* ===== Login split profesional (scoped) ===== */
+
+.wrap{
+  position: fixed; inset: 0;
+  display: grid; place-items: center;
+  padding: 24px 16px;
+  background: transparent;
+}
+
+.card{
+  width: 100%;
+  max-width: 1000px;
+  min-height: 460px;
+  background: #fff;
+  border: 1px solid #e7ebea;
+  border-radius: 24px;
+  box-shadow: 0 28px 60px -28px rgba(8,30,24,.24);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 44% 56%;
+}
+
+/* ========== BRAND (izquierda) ========== */
+.brand{
+  position: relative;
+  display: grid; place-items: center;
+  background:
+    radial-gradient(900px 420px at 20% -10%, rgba(16,185,129,.10), transparent 60%),
+    radial-gradient(700px 300px at 120% 110%, rgba(16,185,129,.08), transparent 60%),
+    linear-gradient(135deg, #fbfdfc 0%, #ffffff 70%);
+  border-right: 1px solid #eef2f1;
+}
+
+.brandInner{
+  position: relative; z-index: 1;
+  display: grid; place-items: center;
+  gap: 14px;
+  padding: 32px 22px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.logo{
+  width: clamp(140px, 22vw, 210px);
+  height: auto; object-fit: contain;
+  filter: drop-shadow(0 10px 26px rgba(0,0,0,.12));
+}
+
+.company{
+  font-weight: 800;
+  font-size: clamp(12px, 1.2vw, 13.5px);
+  line-height: 1.25;
+  color: #073326;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-align: center;
+}
+.system{
+  margin-top: -2px;
+  font-weight: 800;                       /* más fuerte */
+  font-size: clamp(14px, 1.3vw, 18px);    /* más grande */
+  letter-spacing: .04em;
+  color: #0e2b21;                          /* verde oscuro legible */
+  text-align: center;
+}
+
+
+/* ========== FORM (derecha) ========== */
+.form{
+  display: grid; align-content: center;
+  padding: 40px 36px;
+}
+.formInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra horizontal */
+  justify-content: center; /* centra vertical si el form tiene altura */
+  text-align: center;
+}
+
+
+.heading {
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 800;
+  text-align: center; /* centra horizontalmente */
+  color: #0e2b21;
+  margin: 0 0 6px;
+}
+
+.sub{ color:#5f7c74; margin: 0 0 16px; text-align: center;}
+
+.msBtn{
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: clamp(260px, 55%, 420px);  /* ancho agradable y flexible */
+  height: 48px;
+  margin: 10px auto 0;             /* ¡centrado! */
+
+  padding: 0 16px;
+  background: #fff;
+  color: #0b1a14;
+  border: 1px solid #e7ebea;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .2s, box-shadow .2s, transform .05s;
+  box-shadow: 0 12px 28px -18px rgba(14,163,105,.28);
+}
+
+.msBtn:hover{
+  border-color: #10b981;
+  box-shadow: 0 16px 34px -20px rgba(14,163,105,.45);
+}
+.msBtn:active{ transform: translateY(1px); }
+
+.msIcon{
+  display: inline-grid;
+  grid-template-columns: repeat(2, 9px);
+  grid-template-rows: repeat(2, 9px);
+  gap: 2px;
+}
+.msIcon span{ width:9px; height:9px; display:block; }
+.msR{ background:#f25022; }
+.msG{ background:#7fba00; }
+.msB{ background:#00a4ef; }
+.msY{ background:#ffb900; }
+
+.hr{ height:1px; background:#f0f2f2; margin: 18px 0 10px; }
+.hint{ font-size:12px; color:#5f7c74; }
+
+@media (max-width: 880px){
+  .card{ grid-template-columns: 1fr; }
+  .brand{ border-right: 0; border-bottom: 1px solid #eef2f1; }
+  .form{ padding: 28px 22px; }
+}

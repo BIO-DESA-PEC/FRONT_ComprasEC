@@ -1,0 +1,57 @@
+/* src/components/pagination.module.css */
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 14px;
+  color: #6b7280;
+  border-top: 1px solid #f0f0f0;
+}
+
+.info {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.navBtn:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.navBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.current {
+  background: #d1fae5;
+  border: 1px solid #10a56b;
+  color: #0b8556;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}

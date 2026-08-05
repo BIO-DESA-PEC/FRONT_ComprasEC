@@ -1,0 +1,352 @@
+/* Facturas.module.css */
+
+.container {
+  width: 100%;
+  min-width: 0;
+  padding: 24px;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search {
+  min-width: 260px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  outline: none;
+}
+
+.search:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.btnSecondary {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btnSecondary:hover {
+  background: #e5e7eb;
+}
+
+/* ✅ select filtro gasto */
+.filterSelect{
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+}
+
+.filterSelect:focus{
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+/* ✅ pill estado gasto */
+.gastoPill{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.gastoOk{
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+
+.gastoPend{
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #9a3412;
+}
+
+.tableWrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.table th {
+  background: #f1f5f9;
+  text-align: left;
+  padding: 10px;
+  color: #334155;
+  font-weight: 500;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #334155;
+}
+
+.table tr:hover {
+  background-color: #f8fafc;
+}
+
+.btn {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #16a34a;
+}
+
+/* ============================================
+   Acciones estilo "Órdenes de compra"
+   Botones cuadrados, solo ícono.
+   ============================================ */
+.actions{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.iconBtn{
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+
+  color: #16a34a;
+  font-size: 16px;
+  line-height: 1;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: .18s;
+}
+
+.iconBtn:hover{
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.iconBtn svg{
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.iconBtnDisabled{
+  opacity: .4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.msg {
+  padding: 40px;
+  text-align: center;
+  color: #475569;
+  font-size: 16px;
+}
+
+.error {
+  padding: 20px;
+  text-align: center;
+  color: #b91c1c;
+  background: #fee2e2;
+  border-radius: 8px;
+  margin: 24px;
+}
+
+/* ============================================
+   ✅ Paginación estilo "Órdenes de compra":
+   info de rango + números truncados con "…"
+   ============================================ */
+.pager{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 4px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.pagerInfo{
+  font-size: 13px;
+  color: #64748b;
+}
+
+.pagerNav{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pageBtn {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 13px;
+  color: #0f172a;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.pageBtn:hover {
+  background: #f3f4f6;
+}
+
+.pageBtnActive {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.arrowBtn {
+  background: #f9fafb;
+}
+
+.arrowBtn:hover {
+  background: #e5e7eb;
+}
+
+.pageBtnDisabled,
+.pageBtn:disabled {
+  opacity: 0.45;
+  cursor: default;
+  pointer-events: none;
+}
+
+.ellipsis{
+  color: #64748b;
+  padding: 0 4px;
+}
+
+.segmented {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+}
+
+.segment {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  color: #64748b;
+}
+
+.segmentActive {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0;
+  }
+
+  .headerRow,
+  .toolbar {
+    align-items: stretch;
+  }
+
+  .toolbar,
+  .search,
+  .filterSelect,
+  .btnSecondary {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .segmented {
+    width: 100%;
+  }
+
+  .segment {
+    flex: 1;
+  }
+
+  .pager{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pagerNav {
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+}

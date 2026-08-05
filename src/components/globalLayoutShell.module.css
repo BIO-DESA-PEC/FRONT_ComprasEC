@@ -1,0 +1,109 @@
+/* src/components/GlobalLayoutShell.module.css */
+
+.theme {
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+/* contenedor general */
+.shell {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* cuando el sidebar está colapsado */
+.shellCollapsed {
+  grid-template-columns: 0 minmax(0, 1fr);
+}
+
+/* contenido principal */
+.main {
+  min-width: 0;
+  max-width: 100%;
+  padding: 24px;
+}
+
+.backdrop {
+  display: none;
+}
+
+/* BOTÓN HAMBURGUESA */
+.burger {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 40;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.burger span {
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: #f9fafb;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+/* estado abierto: animación light */
+.burgerOpen span:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+.burgerOpen span:nth-child(3) {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .shell,
+  .shellCollapsed {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .main {
+    width: 100%;
+    padding: 58px 14px 18px;
+  }
+
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: block;
+    border: 0;
+    background: rgba(15, 23, 42, 0.42);
+    cursor: default;
+  }
+
+  .burger {
+    z-index: 110;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .burger {
+    top: 16px;
+    left: 14px;
+  }
+}
